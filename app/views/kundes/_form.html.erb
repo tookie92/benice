@@ -1,9 +1,11 @@
 
-
+<div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
+                <h3 class="card-title">Neu Kunde</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -22,13 +24,17 @@
                             <%= f.input :email, input_html: { autocomplete: 'email' } %>
                             <%= f.input :url, input_html: {type: 'url'}, required: true %>
                             <%= f.input :ansprechpartner %>
-                            <%= f.input :telefon, :required => true, input_html: {type: 'number'} , :data => {:mask=> '999-999-9999'} %> 
+                            <%= f.input :telefon, :required => true, input_html: {type: 'number'} , :data => {:mask=> '999-999-9999'} %>
 
 
                     </div>
 
-                    <div class="form-actions">
-                      <%= f.button :submit %>
+                    <div class="card-footer">
+                      <div class="form-actions">
+                        <%= f.button :submit, :class => "btn btn-primary" %>
+                      </div>
                     </div>
                   <% end %>
                 </div>
+            </div>
+      </div>

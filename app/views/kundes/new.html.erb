@@ -1,5 +1,9 @@
 
 
-<%= render 'form', kunde: @kunde %>
 
-<%= link_to 'Back', kundes_path %>
+<%= render 'form', kunde: @kunde %>
+<br>
+<div class="row">
+  <%= link_to  kundes_path, :class => "btn btn-block btn-outline-danger btn-lg"  do %> Zur&uuml;ck<%end%>
+  <br>
+</div>
