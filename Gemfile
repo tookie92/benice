@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_form'
 gem 'devise'
 gem 'cancancan'
+gem 'twitter-bootstrap-rails'
+gem 'valid_url'
+
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

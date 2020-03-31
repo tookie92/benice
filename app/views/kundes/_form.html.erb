@@ -1,7 +1,5 @@
 
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-6">
+
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -9,17 +7,22 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-                  <%= simple_form_for(@kunde) do |f| %>
-                    <%= f.error_notification %>
-                    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+              <%= simple_form_for @kunde, :html => { :class => 'form-horizontal' } do |f| %>
+
+                        <%- if f.error_notification %>
+                          <div class="alert alert-error fade in">
+                            <a class="close" data-dismiss="alert" href="#">&times;</a>
+                            <%= f.error_notification %>
+                          </div>
+                        <%- end %>
                     <div class="card-body">
-                      <div class="form-group">
-                            <%= f.input :name , :class => 'form-control' %>
-                      </div>
-                            <%= f.input :email %>
-                            <%= f.input :url %>
+
+                            <%= f.input :name  %>
+
+                            <%= f.input :email, input_html: { autocomplete: 'email' } %>
+                            <%= f.input :url, input_html: {type: 'url'}, required: true %>
                             <%= f.input :ansprechpartner %>
-                            <%= f.input :telefon %>
+                            <%= f.input :telefon, :required => true, input_html: {type: 'number'} , :data => {:mask=> '999-999-9999'} %> 
 
 
                     </div>
@@ -29,53 +32,3 @@
                     </div>
                   <% end %>
                 </div>
-              </div>
-            </div>
-
-
-
-<div class="row">
-
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </div>
-
-    </div>
