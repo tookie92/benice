@@ -1,0 +1,70 @@
+<li class="nav-item dropdown no-arrow">
+  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.name+" "+current_user.surname %></span>
+    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+  </a>
+  <!-- Dropdown - User Information -->
+  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+    <a class="dropdown-item" href="#">
+      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+      Profile
+    </a>
+    <%= link_to  edit_user_registration_path, class: "dropdown-item" do %>
+      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+      Edit
+    <% end %>
+
+    <a class="dropdown-item" href="#">
+      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+      Activity Log
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+      Logout
+    </a>
+  </div>
+</li>
+
+
+
+
+
+
+
+<!-- Add or Edit Product Start -->
+      <div class="add-edit-product-wrap col-12">
+
+          <div class="add-edit-product-form">
+
+
+                  <h4 class="title">About Product</h4>
+
+                  <div class="row">
+                      <div class="col-lg-12 col-12 mb-30"><input v-model="kunde.name" class="form-control" type="text" placeholder=" Name / Title*"></div>
+                      <div class="col-lg-12 col-12 mb-30"><input v-model="kunde.email" class="form-control" type="text" placeholder="email"></div>
+                      <div class="col-lg-12 col-12 mb-30"><input v-model="kunde.url" class="form-control" type="text" placeholder="Url"></div>
+                      <div class="col-lg-12 col-12 mb-30"><input v-model="kunde.telefon" class="form-control" type="text" placeholder="Telefon"></div>
+                      <div class="col-lg-12 col-12 mb-30"><input v-model="kunde.ansprechpartner" class="form-control" type="text" placeholder="Ansprechpartner"></div>
+
+
+
+
+                  <!-- Button Group Start -->
+                  <div class="row">
+                      <div class="d-flex flex-wrap justify-content-end col mbn-10">
+                        <% if current_page?(new_kunde_path) %>
+                    			<button @click="saveKunde" class="button button-outline button-primary mb-10 ml-10 mr-0">Speichern</button>
+                        		<% else %>
+                        			<button @click="updateKunde" class="button button-outline button-info mb-10 ml-10 mr-0">Updaten</button>
+                        		<% end %>
+                        <!--  <button class="button button-outline button-primary mb-10 ml-10 mr-0">Save & Publish</button>
+                          <button class="button button-outline button-info mb-10 ml-10 mr-0">Save to Draft</button>
+                          <button class="button button-outline button-danger mb-10 ml-10 mr-0">Delete Product</button> -->
+                      </div>
+                  </div><!-- Button Group End -->
+
+
+          </div>
+
+      </div><!-- Add or Edit Product End -->

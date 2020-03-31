@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<section class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Url</th>
+                      <th>Ansprechpartner</th>
+                      <th>Telefon</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <% @kundes.each do |kunde| %>
+                      <tr>
+                        <td><%= kunde.name %></td>
+                        <td><%= kunde.email %></td>
+                        <td><%= kunde.url %></td>
+                        <td><%= kunde.ansprechpartner %></td>
+                        <td><%= kunde.telefon %></td>
+                        <td><%= link_to 'Show', kunde %></td>
+                        <td><%= link_to 'Edit', edit_kunde_path(kunde) %></td>
+                        <td><%= link_to 'Destroy', kunde, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+            </div>
+
+                <br>
+
+<%= link_to 'New Kunde', new_kunde_path %>
